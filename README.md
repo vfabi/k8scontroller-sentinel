@@ -1,5 +1,14 @@
 # k8scontroller-sentinel
 
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/vfabi/k8scontroller-sentinel)
+![GitHub last commit](https://img.shields.io/github/last-commit/vfabi/k8scontroller-sentinel)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+[![Generic badge](https://img.shields.io/badge/hub.docker.com-vfabi/k8scontroller_sentinel-<>.svg)](https://hub.docker.com/repository/docker/vfabi/k8scontroller-sentinel)
+![Docker Pulls](https://img.shields.io/docker/pulls/vfabi/k8scontroller-sentinel)
+![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/vfabi/k8scontroller-sentinel)
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/vfabi/k8scontroller-sentinel)
+
 Kubernetes controller to manage some special tasks.
 
 ## Status
@@ -34,7 +43,7 @@ SLACK_CHANNEL | Slack channel. For sending message to Slack. | true | | #alerts 
 
 ## Docker
 
-[![Generic badge](https://img.shields.io/badge/hub.docker.com-vfabi/k8scontroller-sentinel-<>.svg)](https://hub.docker.com/repository/docker/vfabi/k8scontroller-sentinel)
+[![Generic badge](https://img.shields.io/badge/hub.docker.com-vfabi/k8scontroller_sentinel-<>.svg)](https://hub.docker.com/repository/docker/vfabi/k8scontroller-sentinel)
 
 ## Contributing
 
