@@ -1,0 +1,38 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8scontroller-sentinel
+  namespace: mon
+spec:
+  selector:
+    matchLabels:
+      app: k8scontroller-sentinel
+  template:
+    metadata:
+      labels:
+        app: k8scontroller-sentinel
+    spec:
+      serviceAccountName: k8scontroller-sentinel
+      containers:
+      - name: k8scontroller-sentinel
+        image: vfabi/k8scontroller-sentinel:0.0.2
+        imagePullPolicy: Always
+        env:
+        - name: SLACK_URL
+          valueFrom:
+            configMapKeyRef:
+              name: k8scontroller-sentinel
+              key: SLACK_URL
+        - name: SLACK_CHANNEL
+          valueFrom:
+            configMapKeyRef:
+              name: k8scontroller-sentinel
+              key: SLACK_CHANNEL
+        resources:
+          requests:
+            memory: 64Mi
+            cpu: 100m
+          limits:
+            memory: 128Mi
+            cpu: 200m

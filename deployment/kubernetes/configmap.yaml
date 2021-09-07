@@ -1,0 +1,9 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: k8scontroller-sentinel
+  namespace: mon
+data:
+  SLACK_URL: ''
+  SLACK_CHANNEL: ''

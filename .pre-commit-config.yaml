@@ -1,0 +1,42 @@
+---
+repos:
+
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.0.1
+  hooks:
+  # general
+  - id: trailing-whitespace
+    exclude: (\.enc|\.md)$
+  - id: end-of-file-fixer
+    exclude: (\.enc|\.json)$
+  - id: mixed-line-ending
+    exclude: \.enc$
+  - id: check-json
+  - id: check-yaml
+    exclude: (.*/helm-charts/.*|.*/helm/values/.*|rbac.yaml)
+  - id: check-symlinks
+  - id: check-executables-have-shebangs
+  - id: check-shebang-scripts-are-executable
+  - id: detect-aws-credentials
+  - id: detect-private-key
+  - id: no-commit-to-branch
+    args: [--branch=main, --branch=develop]
+  - id: check-merge-conflict
+  # python
+  - id: name-tests-test
+  - id: requirements-txt-fixer
+  - id: double-quote-string-fixer
+  - id: fix-encoding-pragma
+
+- repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
+  rev: 0.1.0
+  hooks:
+  - id: yamlfmt
+    args: [--mapping, '2', --sequence, '2', --offset, '0']
+    exclude: (.*/helm-charts/.*|.*/helm/values/.*|.*configuration/kubernetes/core/env-prod/helmfile.yaml)
+
+# - repo: https://github.com/adrienverge/yamllint.git
+#   rev: v1.26.3
+#   hooks:
+#       - id: yamllint
+#         args: [--format, parsable, --strict]
